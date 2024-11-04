@@ -1,0 +1,3113 @@
+<style>
+    table { display: none; }
+    body, table, div, p {
+        color: #5c2615;
+        font-size: 10pt;
+        font-family: verdana;
+    }
+    body { background: #f9f6eb; }
+    a:link, a:active, a:visited {
+        color: #942e5c;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #c00d5d;
+        font-style: italic;
+        border-bottom: 1px dotted #942e5c;
+        cursor: crosshair;
+    }
+    
+    
+    #main {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+    }
+    .section {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+    #main table { display: table; }
+    
+	i { color: #a568a5; }
+	b { color: #7f5285; }
+	b.bullet {
+		font-weight: normal;
+		color: #508f92;
+	}
+	
+    #navbar {
+        background: #fff;
+        border-top: 1px solid #a94c4c;
+        border-left: 1px solid #a94c4c;
+        border-right: 1px solid #a94c4c;
+        border-bottom: 5px solid #a94c4c;
+        text-align: center;
+        padding: 15px;
+        width: 50px;
+        top: 30px;
+        left: 30px;
+        z-index: 1000;
+    }
+    #navbar p {
+        color: #a94c4c;
+        font-size: 16pt;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+    #dropdown {
+        text-align: left;
+        list-style: none;
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+    #navbar:hover { width: 80px; }
+    #navbar:hover, #enter:hover {
+        cursor: crosshair;
+    }
+    #navbar:hover p {
+        display: none;
+    }
+    #navbar:hover #dropdown {
+        display: block;
+    }
+    #dropdown li.navbtn a {
+        display: block;
+        color: #a94c4c;
+        font-size: 9pt;
+        font-style: normal;
+        font-variant:small-caps;
+        text-decoration: none;
+        padding: 4px;
+        margin: 10px 0;
+        border: 0;
+    }
+    #dropdown li.navbtn:hover a {
+        background-color: #fff4f4;
+        color: #782e52;
+    }
+    #dropdown li#sitely a {
+        border-bottom: 1px dotted #fff;
+        color: #be8d8d;
+        font-style: italic;
+        font-variant: none;
+        text-transform: lowercase;
+    }
+    #dropdown li#sitely:hover a {
+        background-color: #fff;
+        border-bottom: 1px dotted #e0c6c6;
+        color: #a94c4c;
+    }
+    
+    
+    #cover {
+        background: #f4ebe1;
+        text-align: center;
+    }
+    #cover h1 {
+        color: #a94c4c;
+        font-size: 40pt;
+        font-family: Georgia;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 20pt;
+        margin-top: 220px;
+        margin-bottom: 0;
+    }
+    #cover hr {
+        background-color: #dab1a1;
+        border: 0;
+        width: 60%;
+        height: 1px;
+        margin-right: 50px;;
+    }
+    #cover h2 {
+        color: #861863;
+        font-size: 13pt;
+        font-family: 'lucida sans';
+        font-style: italic;
+        letter-spacing: 3pt;
+        margin-bottom: 30px;
+    }
+    #enter {
+        background: #fff;
+        border-top: 1px solid #a94c4c;
+        border-left: 1px solid #a94c4c;
+        border-right: 1px solid #a94c4c;
+        border-bottom: 5px solid #c67676;
+        color: #942e5c;
+        text-transform: lowercase;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        margin: 0 auto;
+        margin-bottom: -4px;
+        width: 50%;
+    }
+    #enter:hover {
+        background: #f0fff0;
+        border-top: 1px solid #738a88;
+        border-left: 1px solid #738a88;
+        border-right: 1px solid #738a88;
+        border-bottom: 5px solid #738a88;
+        color: #64856d;
+        font-style: normal;
+        width: 318px;
+    }
+    #cover .exit {
+        font-style: italic;
+        bottom: 40px;
+        right: 65px;
+    }
+    #cover .exit:link, .exit:active, .exit:visited {
+        border: 1px solid #f4ebe1;
+        color: #a94c4c;
+    }
+    #cover .exit:hover {
+        border-bottom: 1px dotted #a94c4c;
+        color: #c00d5d;
+    }   
+    .credit {
+        color: #a94c4c;
+        font-style: italic;
+        bottom: 45px;
+        left: 55px;
+    }
+    .credit a {
+        color: #942e5c;
+        text-decoration: none;
+    }
+    .credit a:hover {
+        color: #c00d5d;
+    }
+    
+    #cover div.top {
+        margin-top: 20px;
+        height: 350px !important;
+    }
+    div.updates {
+        width: 680px;
+        height: 100%;
+        overflow: hidden;
+        padding: 20px;
+        margin: 10px auto;
+    }
+    div.upscroll {
+        background: url('http://i.imgur.com/FUm69UM.png');
+        text-align: left;
+        width: auto;
+        overflow: auto;
+        padding: 10px 25px;
+    }
+    .updates h5 {
+        font-size: 9pt;
+        text-align: left;
+        margin: 0 40px 10px;
+        padding: 0;
+    }
+    
+    
+    #page1 {
+        background: url('https://imgur.com/dG3oGYJ.png');
+    }
+    #page1 h1 {
+        color: #a95f9d;
+        font-size: 30pt;
+        font-family: Georgia;
+        text-align: right;
+        letter-spacing: 2px;
+        padding: 0;
+        margin: 20px auto 0;
+    }
+    #page1 h2 {
+        color: #70548f;
+        font-size: 14pt;
+        text-align: right;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0 auto;
+    }
+    #page1 h1, #page1 h2, #page h3 {
+        width: 1100px;
+    }
+    #page1 h3 {
+        background: #a2c9c0 url('https://i.imgur.com/O2FcsbW.jpg') fixed -400px -100px;
+        color: #f9f6eb;
+        font-size: 14pt;
+        font-family: georgia;
+        font-weight: normal;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+        text-align: left;
+        padding: 10px;
+        padding-left: 100px;
+        margin: 20px auto;
+    }
+    #page1 h4 {
+        background: #f9f6eb;
+        top: -23px;
+        width: 150px;
+        padding: 7px 10px;
+        margin: 0 0 -7px;
+    }
+    #page1 h5 {
+        border-bottom: 2px solid #f9f6eb;
+        font-size: 9pt;
+        line-height: normal;
+        margin: 0;
+        margin-bottom: -9px;
+        padding: 2px;
+    }
+    .profile {
+        text-align: center;
+        width: 1100px;
+        padding: 0;
+        margin: 20px auto;
+    }
+	
+    .bio {
+        background: none;
+        width: 1100px;
+        padding: 0;
+        border-spacing: 20px;
+        margin: 0 auto;
+    }
+    .bio td {
+        background: #fff;
+        border-bottom: 4px solid #ddccc1;
+        text-align: center;
+        vertical-align: top;
+        padding: 15px;
+    }
+    .bio td.half { width: 50%; }
+    .bio td.quarter { width: 25%; }
+    .bio td.third { width: 33.3%; }
+	b.day {
+		background: #f9f6eb;
+		text-align: center;
+		color: #689fb4;
+		display: inline-block;
+		width: 30px;
+		padding: 5px 0;
+		margin: 10px 3px 0;
+	}
+	.contact {
+		background: #f9f6eb;
+		border-bottom: 1px solid #b68b8b;
+		display: inline-block;
+		float: right;
+		text-align: center;
+		width: 200px;
+		padding: 5px 20px 7px;
+		margin: 10px 20px;
+	}
+	a.contact {
+		color: #90548d;
+		font-family: consolas;
+		font-size: 10pt;
+		font-weight: normal;
+		text-transform: lowercase;
+	}
+	a.contact:hover {
+		background: #f7f1e9;
+		color: #663893;
+		font-style: normal;
+	}
+	
+    .basic {
+        background: none;
+        width: 100%;
+        margin: -20px auto 0;
+        padding: 0;
+    }
+    .basic td {
+        background: none;
+        border: none;
+        text-align: left;
+    }
+    
+    img.item, img.itemnc {
+        display: inline-block;
+        width: 50px;
+        padding: 0;
+        margin: 2px 1.5px;
+    }
+	.itemnc { border: 1px dashed #e28d8d; }
+    img.btn {
+        display: inline-block;
+        width: 80px;
+        padding: 0;
+        margin: 2px 6px;
+    }
+    
+    .dailies {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .daily img {
+        background: #ebf5f2;
+        border: 1px solid #22978a;
+        width: 50px;
+        height: 50px;
+        padding: 3px;
+        margin: 2px;
+    }
+    .daily:hover img {
+        background-color: #d9ece6;
+        border: 1px solid #2a776f;
+    }
+
+    
+    #page2 {
+        background: #cfc2d1 url('https://i.imgur.com/O2FcsbW.jpg');
+    }
+    #page2 .sect2 {
+        background: #fff;
+        border-top: 1px solid #a94c4c;
+        border-left: 1px solid #a94c4c;
+        border-right: 1px solid #a94c4c;
+        border-bottom: 5px solid #a94c4c;
+        text-align: center;
+        width: 1080px;
+        height: auto;
+        padding: 10px;
+        margin: 100px auto 10px;
+    }
+    .sect2 a {
+        background: #f7eeeb;
+        color: #892e43;
+        font-size: 10pt;
+        letter-spacing: 2px;
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 2px;
+    }
+    .sect2 a:hover {
+        background: #f9f4ef;
+        border: none;
+        font-style: normal;
+    }
+    
+    .fixedcenter {
+        text-align: center;
+        width: 1100px;
+        margin: 0 auto;
+    }
+    .fixedbox1 {
+        background: #f9f4ef;
+        border: 1px solid #a94c4c;
+        display: inline-block;
+        float: left;
+        width: 340px;
+        height: 435px;
+        overflow: hidden;
+        padding: 0 10px 10px;
+        margin: 0;
+    }
+    #page2 h5 {
+        margin: 30px 0 10px;
+    }
+    .petnav {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        padding: 0;
+        margin: 0;
+    }
+    .petlink, .petlink:hover {
+        border: none;
+    }
+    .petlink img {
+        background: #fff;
+        border: 1px solid #dbc770;
+        width: 59px;
+        padding: 4px;
+        margin: 2px;
+    }
+    .petlink:hover img {
+        background-color: #eddedf;
+        border: 1px solid #eddedf;
+    }
+    a.ufbtn {
+        background: #fff;
+        border-bottom: 2px solid #f9f4ef;
+        color: #a44473;
+        font-size: 10pt;
+        letter-spacing: 1px;
+        text-transform: lowercase;
+        display: block;
+        width: 150px;
+        padding: 14px 30px;
+        margin: 38px auto;
+    }
+    a.ufbtn:hover {
+        background: #f5e8e5;
+        border-bottom: 2px solid #db8a8a;
+        color: #c85f5f;
+        font-style: normal;
+        width: 180px;
+    }
+    
+    .fixedbox2 {
+        background-color: #f9f4ef;
+        border: 10px solid #f9f4ef;
+        display: inline-block;
+        float: right;
+        width: 710px;
+        height: 425px;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+    .petdisplay {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .petimage {
+        display: inline-block;
+        float: left;
+        width: 35%;
+        height: 100%;
+    }
+    .petdesc {
+        text-align: left;
+        display: inline-block;
+        float: right;
+        width: 61%;
+        height: 95%;
+        overflow: auto;
+        padding: 10px;
+    }
+    #page2 h3 {
+        font-size: 13pt;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-align: right;
+        margin: 0;
+        padding: 2px;
+    }
+    #page2 h3 a {
+        color: #638b7d;
+    }
+    #page2 h3 a:hover {
+        border: none;
+        color: #c69eab;
+    }
+    #page2 h4 {
+        font-size: 11pt;
+        font-weight: normal;
+        font-variant: small-caps;
+        text-align: right;
+        margin: 0;
+    }
+    #page2 h6 {
+        background: #ead7d7;
+        border-bottom: 5px solid #f2e8e1;
+        font-size: 11pt;
+        font-family: georgia;
+        font-style: italic;
+        letter-spacing: 4px;
+        text-transform: lowercase;
+        padding: 2px 10px;
+        margin: 20px 0 12px;
+    }
+    div.ppp {
+        background-color: #fff;
+        text-align: center;
+        width: 70%;
+        padding: 20px;
+        margin: 10px auto;
+    }
+    div.ppp p {
+        text-align: center;
+        width: 75%;
+        margin: 3px auto;
+    }
+    div.ppp b {
+        color: #ac1057;
+    }
+    div.ppp i {
+        color: #db877f;
+    }
+    .left, .right {
+        list-style: circle;
+        text-align: left;
+        display: inline-block;
+        width: 40%;
+        margin: 5px 0 30px;
+    }
+    .left {
+        list-style-image: url('http://i.imgur.com/jpWkfGa.png');
+        padding-left: 33px;
+    }
+    .right {
+        list-style-image: url('http://i.imgur.com/40BrrkC.png');
+    }
+    .listhead {
+        background-color: #eee;
+        list-style: none;
+        color: #666;
+        font-size: 11pt;
+        font-family: georgia;
+        font-style: italic;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-left: -19px;
+        margin-bottom: 10px;
+        padding: 2px 0;
+    }
+    .left li.listhead {
+        background-color: #d6e8c4;
+        color: #5a8b44;
+    }
+    .right li.listhead {
+        background-color: #ffd2d2;
+        color: #ce5656;
+    }
+    .pocket {
+        background-color: #fff;
+        text-align: center;
+        width: 73%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    
+    #ufa, #rehomed, #album {
+        overflow: auto;
+    }
+    #ufa .petother h3 { text-transform: none; }
+    #ufa h3, #ufa h4 { text-align: center; }
+    #ufa h4 { margin-bottom: 12px;}
+    .petother {
+        background: #ecefee;
+        border-bottom: 1px solid #9ac1b3;
+        text-align: center;
+        display: inline-block;
+        width: 200px;
+        height: 280px;
+        overflow: hidden;
+        padding: 10px;
+        margin: 3px;
+    }
+    .petother p { text-align: left; }
+    .petother b { color: #8e4971; }
+    #rehomed h4 {
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .oldie {
+        border: 1px solid #f9f4ef;
+        display: inline-block;
+        padding: 7px;
+        margin: 0;
+    }
+    .oldie:hover {
+        background: #eddedf;
+    }
+    .oldie img {
+        width: 150px;
+        margin-bottom: 7px;
+    }
+    
+    
+    #page3 { }
+    div.section1, div.section2 {
+        padding: 40px 200px;
+        margin: 0 auto;
+    }
+    div.section2 {
+        background: #fff url('http://i.imgur.com/6Ut6AYc.png') fixed;
+    }
+	#page3 hr {
+		border: none;
+		background: #f2d2d2;
+		height: 1px;
+	}
+    
+    .wishbox1 {
+        background: none;
+        display: inline-block;
+        width: 370px;
+        height: 200px;
+        overflow: hidden;
+        padding: 0;
+        margin: 10px;
+    }
+    .wishbox1 h3 {
+        letter-spacing: 3pt;
+        font-weight: normal;
+        font-style: italic;
+        margin: 0 0 10px;
+    }
+    .wishpet {
+        display: inline-block;
+        width: 80px;
+        height: 172px;
+    }
+    .wishscroll {
+        background: #fff;
+        border: 10px solid #fff;
+        text-align: center;
+        display: inline-block;
+        width: 260px;
+        height: 152px;
+        overflow: auto;
+        float: right;
+    }
+    
+    .wishbox2 {
+        background: #fff;
+        padding: 15px;
+    }
+    .wishbox2 .item {
+        margin: 2px 5px;
+    }
+    
+    
+    #cred {
+        background: #c8a8bc url('https://i.imgur.com/qZIpUIH.jpg');
+        padding: 20px;
+    }
+    #credits {
+        background: #fff url('http://i.imgur.com/6Ut6AYc.png');
+        border-top: 1px solid #a94c4c;
+        border-left: 1px solid #a94c4c;
+        border-right: 1px solid #a94c4c;
+        border-bottom: 5px solid #a94c4c;
+        padding: 40px;
+        margin: 160px auto;
+    }
+    #credits ul {
+        list-style-type: circle;
+    }
+    #credits ul ul {
+        background-color: #f2e8e8;
+        color: #a94c4c;
+        font-size: 8pt;
+        list-style: none;
+        width: 150px;
+        padding: 5px;
+        text-align: center;
+        display: none;
+        bottom: -3;
+        left: 190;
+    }
+    #credits ul li.inf:hover ul {
+        display: block;
+    }
+    
+    
+    h2 {
+        font-size: 20pt;
+        font-family: 'lucida sans';
+        font-style: italic;
+        letter-spacing: 10pt;
+        text-align: center;
+    }  
+    hr.spacer {
+        border: 0;
+        margin: 20px 0;
+    }
+    
+    div.top {
+        background: #a2c9c0 url('https://i.imgur.com/qZIpUIH.jpg') fixed -400px -100px;
+        height: 124px;
+    }
+    div.btn {
+        width: 100%;
+        margin: 10px auto;
+        text-align: center;
+        clear: both;
+    }
+    a.page {
+        color: #892e43;
+        font-size: 9pt;
+        font-style: normal;
+        font-variant: small-caps;
+        background: #fff;
+        border-top: 1px solid #a94c4c;
+        border-left: 1px solid #a94c4c;
+        border-right: 1px solid #a94c4c;
+        border-bottom: 5px solid #a94c4c;
+        padding: 7px 40px;
+        margin: 0 10px 20px;
+        display: inline-block;
+    }
+    a.page:hover {
+        background: #fcefef;
+        color: #922e67;
+    }
+    
+    div.center {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    div.aright {
+        text-align: right;
+    }
+</style>
+
+<div id="main" style="position: absolute;">
+    <div id="navbar" style="position: fixed;border-radius: 10px;">
+        <p>☰</p>
+        <ul id="dropdown">
+            <li class="navbtn"><a href="#cover">Cover</a></li>
+            <li class="navbtn"><a href="#page1">About</a></li>
+            <li class="navbtn"><a href="#page2">The Fam</a></li>
+            <li class="navbtn"><a href="#page3">Wishes</a></li>
+            <li class="navbtn" id="sitely"><a href="#cred">Sitely</a></li>
+        </ul>
+    </div>
+    
+    <div id="cover" class="section" style="position: relative;">
+        <h1>Portfolio</h1>
+        <hr>
+        <h2>of mintychocolatelover</h2>
+        <a href="#page1" id="enter" style="position: relative;border-radius: 50px;max-width: 330px;">
+            *Click to Continue*
+        </a>
+        
+        <div class="top">
+            <div class="updates">
+                <h5>last updated 11.02.2024</h5>
+                <div class="upscroll" style="border-radius: 10px;max-height: 270px;">
+                     <p>NEW LAYOUT!!!</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="/home" class="exit" style="position: absolute;">exit ☛</a>
+        
+        <div class="credit" style="position: absolute;">___ layout &copy; <a href="/~pandabarn">pandabarn</a></div>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <div id="page1" class="section" style="position: relative;">
+        
+        <h1>mintychocolatelover</h1>
+        <h2>My Little Bio</h2>
+        
+        <div class="profile" style="position: relative;">
+            <table class="bio">
+                <tr>
+                    <td colspan="2" style="text-align: left;">
+                        <h4 style="position: relative;">About Me</h4>
+                        <b>Name:</b> Manda / Minty / Kayla<br>
+                        <b>Age:</b> 30+
+                        <p>Once upon a time, I used to go by Kayla online. It was my 11yo online alias, as it were. So if that's how you knew me, feel free to still call me that. I don't mind :')</p>
+                        <p>Coding and graphic-making were pretty much the entirety of my time spent on neo in the past. I used to have a layout site called "Floraison", I believe. It was a good time, but college and life in general started to take my attention away from neo. I was in-and-out sporadically from around 2012 - 2016. Then I pretty much didn't get back on until May of this year (2024). And straight back to layouts I went!</p>
+                        <p>Still, I've decided to take my account a bit more seriously this go around, so I have created improvement goals. I want to improve my stats, gallery, and pets along with preparing to begin site hosting once more. I'm excited for what lies ahead, and hopefully time well-spent enjoying an old passion.</p>
+						<p>
+							<b>Availability:</b><br>
+							<b class="day" style="border-radius: 20px;">T</b><b class="day" style="border-radius: 20px;">W</b><b class="day" style="border-radius: 20px;">R</b><b class="day" style="border-radius: 20px;">Sa</b> 8am-12pm NST, 5pm-8pm NST (generally)
+							<a href="/neomessages.phtml?type=send&recipient=mintychocolatelover" class="contact" style="border-radius: 20px;">✉ Contact</a>
+						</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="half">
+                        <h4 style="position: relative;">Accounts</h4>
+                        <b>Main:</b><br>
+                        <a href="/userlookup.phtml?user=mintychocolatelover" class="imglink"><img src="https://images.neopets.com/neoboards/avatars/neodaqtick.gif" class="item" title="mintychocolatelover"></a><br><br>
+                        
+                        <b>Sides (4):</b><br>
+                        <a href="/userlookup.phtml?user=mintychocolatelover2" class="imglink"><img src="https://images.neopets.com/neoboards/avatars/plushiecybunny.gif" class="item" title="mintychocolatelover2"></a>
+                        <a href="/userlookup.phtml?user=xkaylamintyx" class="imglink"><img src="https://images.neopets.com/neoboards/avatars/spardel.gif" class="item" title="xkaylamintyx"></a>
+                        <a href="/userlookup.phtml?user=pandabarn" class="imglink"><img src="https://images.neopets.com/neoboards/avatars/rainbowchomby.gif" class="item" title="pandabarn"></a>
+                        <a href="/userlookup.phtml?user=anonymousness" class="imglink"><img src="https://images.neopets.com/neoboards/avatars/default.gif" class="item" title="anonymousness"></a>
+                    </td>
+                    <td>
+                        <h4 style="position: relative;">Pocket Dailies</h4>
+                        <div class="dailies">
+                            <a href="https://www.neopets.com/trudys_surprise.phtml" class="daily"><img src="https://images.neopets.com/items/gro_mynci_hairgel.gif" title="Trudy's Slots"></a>
+                            <a href="https://www.neopets.com/questlog/" class="daily"><img src="https://images.neopets.com/items/toy_hannah_action.gif" title="Quest Log"></a>
+                            <a href="https://www.neopets.com/halloween/gravedanger/index.phtml" class="daily"><img src="https://images.neopets.com/items/sta_gd_grave_danger.gif" title="Grave Danger"></a>
+                            <a href="https://www.neopets.com/jelly/jelly.phtml" class="daily"><img src="https://images.neopets.com/items/jel_lime_whole.gif" title="Giant Jelly"></a>
+                            <a href="https://www.neopets.com/prehistoric/omelette.phtml" class="daily"><img src="https://images.neopets.com/items/toy_y19haltot_giantom_action.gif" title="Giant Omelette"></a>
+                            <a href="https://www.neopets.com/shop_of_offers.phtml?slorg_payout=yes" class="daily"><img src="https://images.neopets.com/items/hall_petpet1.gif" title="Shop of Offers"></a>
+                            <a href="https://www.neopets.com/faerieland/tdmbgpop.phtml" class="daily"><img src="https://images.neopets.com/items/clo_y19haltot_bluegrundo_hh.gif" title="TDMBGPP"></a>
+                            <a href="https://www.neopets.com/desert/shrine.phtml" class="daily"><img src="https://images.neopets.com/items/stamp_desert_shrine.gif" title="Coltzan's"></a>
+                            <a href="https://www.neopets.com/water/fishing.phtml" class="daily"><img src="https://images.neopets.com/items/gar_fishing_meepit.gif" title="Fishing"></a>
+                            <a href="https://www.neopets.com/pirates/anchormanagement.phtml" class="daily"><img src="https://images.neopets.com/items/fur_pirate_anchor.gif" title="Anchor Management"></a>
+                            <a href="https://www.neopets.com/pirates/forgottenshore.phtml" class="daily"><img src="https://images.neopets.com/items/sta_forgotten_shore.gif" title="Forgotten Shore"></a>
+                            <a href="https://www.neopets.com/worlds/geraptiku/tomb.phtml" class="daily"><img src="https://images.neopets.com/items/toy_deserted_tomb.gif" title="Deserted Tomb"></a>
+                            <a href="https://www.neopets.com/faerieland/wheel.phtml" class="daily"><img src="https://images.neopets.com/items/sta_stw_wheelofexcitement.gif" title="Wheel of Excitement"></a>
+                            <a href="https://www.neopets.com/medieval/knowledge.phtml" class="daily"><img src="https://images.neopets.com/wheels/new/tm_knowledge.jpg" title="Wheel of Knowledge"></a>
+                            <a href="https://www.neopets.com/prehistoric/mediocrity.phtml" class="daily"><img src="https://images.neopets.com/wheels/new/tm_mediocrity.jpg" title="Wheel of Mediocrity"></a>
+                            <a href="https://www.neopets.com/stockmarket.phtml?type=list&bargain=true" class="daily"><img src="https://images.neopets.com/games/game_stocks.gif" title="Stocks"></a>
+                            <a href="https://www.neopets.com/lab.phtml" class="daily"><img src="https://images.neopets.com/items/plu_madscientist_labray.gif" title="Lab Ray"></a>
+                            <a href="https://www.neopets.com/winter/snowager.phtml" class="daily"><img src="https://images.neopets.com/items/foo_negg_snowager.gif" title="Snowager"></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+            <h3>~ Avatar Stats ~</h3>
+            <table class="bio">
+                <tr>
+                    <td id="workingon" class="third">
+                        <h4 style="position: relative;">Working Towards</h4>
+                        <img src="https://images.neopets.com/neoboards/avatars/elephantesurprise.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/kadoatery.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/geraptiku_tomb.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/other.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/avatarcollector.gif" class="item">
+                    </td>
+                    <td id="throwingmon" class="third">
+                        <h4 style="position: relative;">Throwing Money at</h4>
+                        <img src="https://images.neopets.com/neoboards/avatars/wheelofexcitement.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/leverofdoom.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/brightvale.gif" class="item">
+                    </td>
+                    <td id="seekinglend">
+                        <h4 style="position: relative;">Seeking Lends:</h4>
+                        <img src="https://images.neopets.com/neoboards/avatars/zaffydoubleagent.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/meowclops_close.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/queenfyora.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/mootix.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/fireblumaroo.gif" class="item">
+                    </td>
+                </tr>
+            </table>
+            <table class="bio" style="margin-top: -17px;">
+                <tr>
+                    <td id="newest" class="half">
+                        <h4 style="position: relative;">Newest</h4>
+                        <img src="https://images.neopets.com/neoboards/avatars/thatsnotrubbish.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/taviteatime.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/ava_deadchia.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/halloween_reginald_hauntedbook_avatar.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/teamillusen.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/fq2023.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/spottedtuskaninny.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/valiant.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/neomailaddict.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/ava_nt_1k.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/neovisionplus.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/ghostkrawk.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/islandquiggle.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/forgshore.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/tonucharge.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/hungryskeith.gif" class="item">
+                    </td>
+                    <td id="faves">
+                        <h4 style="position: relative;">Favorites</h4>
+                        <img src="https://images.neopets.com/neoboards/avatars/slorg.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/quadrapus.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/petpetlabray.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/pwned.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/toasty.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/gloomy.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/rainbowchomby.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/lawyerbot.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/neodaqtick.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/monotony.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/blessyoushoyru.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/ava_devotedcaretaker.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/neomailaddict.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/plushiecybunny.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/ava_nt_1k.gif" class="item">
+                        <img src="https://images.neopets.com/neoboards/avatars/teamillusen.gif" class="item">
+                    </td>
+                </tr>
+            </table>
+            
+            <h3>~ Projects and Goals ~</h3>
+            <table class="bio">
+                <tr>
+                    <td id="neosites" class="half">
+                        <h4 style="position: relative;">Neo Sites</h4>
+                        <br><br>
+                        <a href="/~mintykayla"><img src="https://file.garden/ZsPZ-PBIKymZ1YMN/folio/btn1.png" class="btn" title="My Portfolio"></a>
+                        <a href="/~lnputKey"><img src="https://file.garden/ZsPZ-PBIKymZ1YMN/bts/codeunlocked.gif" class="btn" title="Code Unlocked"></a>
+                        <a href="/~pandabarn"><img src="https://file.garden/ZsPZ-PBIKymZ1YMN/bts/ED1_btn.gif" class="btn" title="Panda Barn"></a>
+                    </td>
+                    <td id="neogoals">
+                        <h4 style="position: relative;">Goals</h4>
+                        <table class="basic">
+                            <tr>
+                                <td>
+                                    <h5>Account Goals:</h5><br>
+                                    <b class="bullet">🞴</b> 7.5mil Bank Status<br>
+                                    <b class="bullet">🞴</b> 300 Avie Count<br>
+                                    <b class="bullet">🞴</b> Attain all dreamies<br>
+                                    <b class="bullet">🞴</b> Complete 1 Stamp Album
+                                </td>
+                                <td>
+                                    <h5>Project Goals:</h5><br>
+                                    <b class="bullet">🞴</b> Complete Filter Guide<br>
+                                    <b class="bullet">🞴</b> Complete pandabarn site<br>
+                                    <b class="bullet">🞴</b> Update Portfolio
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="goalcounters" colspan="2">
+                        <h4 style="position: relative;">Counters</h4>
+                        
+                        <div id="jasperhsd" style="text-align: center; color: #333; font-size: 9pt; font-family: verdana; display: inline-block; width: 210px; padding: 10px;">
+                            <img src="https://images.neopets.com/items/nostalgic_blue_jetsam.gif" style="width: 50px; height: 50px; display: inline-block; float: left;">
+
+                            Jasper to 480 HSD
+
+                            <div style="display: inline-block; background: #fff; border-radius: 50px; border: 1px solid #b7cff7; width: 150px; overflow: hidden; margin-top: 5px;">
+                                <div style="background: #b7cff7; padding: 5px 0; z-index: 9; width: 80%;">
+                                    <div style="color: #0f60bf; font-size: 8pt; font-family: verdana; text-align: center; display: inline-block; z-index: 999;">384 / 480</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="bankroll" style="text-align: center; color: #333; font-size: 9pt; font-family: verdana; display: inline-block; width: 210px; padding: 10px;">
+                            <img src="https://images.neopets.com/items/gif_bag_of_neopoints.gif" style="width: 50px; height: 50px; display: inline-block; float: left;">
+
+                            Bank - 10m npts
+
+                            <div style="display: inline-block; background: #fff; border-radius: 50px; border: 1px solid #ede3b4; width: 150px; overflow: hidden; margin-top: 5px;">
+                                <div style="background: #ede3b4; padding: 5px 0; z-index: 9; width: 50%;">
+                                    <div style="color: #674a06; font-size: 8pt; font-family: verdana; text-align: center; display: inline-block; z-index: 999;">5m</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="codeunlocked" style="text-align: center; color: #333; font-size: 9pt; font-family: verdana; display: inline-block; width: 210px; padding: 10px;">
+                            <img src="https://images.neopets.com/items/boo_decoding_codes.gif" style="width: 50px; height: 50px; display: inline-block; float: left;">
+
+                            Code Unlocked
+
+                            <div style="display: inline-block; background: #fff; border-radius: 50px; border: 1px solid #424f43; width: 150px; overflow: hidden; margin-top: 5px;">
+                                <div style="background: #424f43; padding: 5px 0; z-index: 9; width: 70%;">
+                                    <div style="color: #82ff8b; font-size: 8pt; font-family: verdana; text-align: center; display: inline-block; z-index: 999;">70%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="avicount" style="text-align: center; color: #333; font-size: 9pt; font-family: verdana; display: inline-block; width: 210px; padding: 10px;">
+                            <img src="https://images.neopets.com/neoboards/avatars/default.gif" style="width: 50px; height: 50px; display: inline-block; float: left;">
+
+                            300 Avatars
+
+                            <div style="display: inline-block; background: #fff; border-radius: 50px; border: 1px solid #ffe472; width: 150px; overflow: hidden; margin-top: 5px;">
+                                <div style="background: #ffe472; padding: 5px 0; z-index: 9; width: 84%;">
+                                    <div style="color: #000; font-size: 8pt; font-family: verdana; text-align: center; display: inline-block; z-index: 999;">251 / 300</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="sandgallery" style="text-align: center; color: #333; font-size: 9pt; font-family: verdana; display: inline-block; width: 210px; padding: 10px;">
+                            <img src="https://images.neopets.com/items/tiki_sand_sand.gif" style="width: 50px; height: 50px; display: inline-block; float: left;">
+
+                            Sand Gallery
+
+                            <div style="display: inline-block; background: #fff; border-radius: 50px; border: 1px solid #f9e89b; width: 150px; overflow: hidden; margin-top: 5px;">
+                                <div style="background: #f9e89b; padding: 5px 0; z-index: 9; width: 71%;">
+                                    <div style="color: #855e02; font-size: 8pt; font-family: verdana; text-align: center; display: inline-block; z-index: 999;">108 / 153</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="stampsother" style="text-align: center; color: #333; font-size: 9pt; font-family: verdana; display: inline-block; width: 210px; padding: 10px;">
+                            <img src="https://images.neopets.com/neoboards/avatars/other.gif" style="width: 50px; height: 50px; display: inline-block; float: left;">
+
+                            Stamps: Other
+
+                            <div style="display: inline-block; background: #fff; border-radius: 50px; border: 1px solid #dae6ed; width: 150px; overflow: hidden; margin-top: 5px;">
+                                <div style="background: #dae6ed; padding: 5px 0; z-index: 9; width: 36%;">
+                                    <div style="color: #746faf; font-size: 8pt; font-family: verdana; text-align: center; display: inline-block; z-index: 999;">9 / 25</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="rnbchombymp" style="text-align: center; color: #333; font-size: 9pt; font-family: verdana; display: inline-block; width: 210px; padding: 10px;">
+                            <img src="https://images.neopets.com/items/pot_chomby_rainbow.gif" style="width: 50px; height: 50px; display: inline-block; float: left;">
+
+                            Rainbow Chomby MP
+
+                            <div style="display: inline-block; background: #fff; border-radius: 50px; border: 1px solid #d9d1e7; width: 150px; overflow: hidden; margin-top: 5px;">
+                                <div style="background: #d9d1e7; padding: 5px 0; z-index: 9; width: 10%;">
+                                    <div style="color: #742eb9; font-size: 8pt; font-family: verdana; text-align: center; display: inline-block; z-index: 999;">10%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="plushiepb" style="text-align: center; color: #333; font-size: 9pt; font-family: verdana; display: inline-block; width: 210px; padding: 10px;">
+                            <img src="https://images.neopets.com/items/plushiepaintbrush.gif" style="width: 50px; height: 50px; display: inline-block; float: left;">
+
+                            Plushie PB
+
+                            <div style="display: inline-block; background: #fff; border-radius: 50px; border: 1px solid #ecd7e1; width: 150px; overflow: hidden; margin-top: 5px;">
+                                <div style="background: #ecd7e1; padding: 5px 0; z-index: 9; width: 0%;">
+                                    <div style="color: #883b52; font-size: 8pt; font-family: verdana; text-align: center; display: inline-block; z-index: 999;">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+        
+        <div class="btn">
+            <a href="#cover" class="page" style="border-radius: 50px;">︽ Cover</a>
+            <a href="#page2" class="page" style="border-radius: 50px;">The Fam ︾</a>
+        </div>
+        
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <div id="page3" class="section" style="position: relative;">
+        <div class="sections">
+            <div class="top"></div>
+            <div class="section1">
+                <h2>My Wishlists</h2>
+                <p>At the request of a couple folks, I have put together a comprehensive wishlist. These are all items I am already working toward (actively or passively) to fulfill account goals or to collect just for funsies; all at varying price points. If you are feeling the need to give back in some way, feel free to send me any item from this list. I update it once a week. Thank you to those who have very generously already gifted me items or helped me achieve my goals. I'm touched by the community's generosity. Of coure, please don't feel obligated to do so! Being able to help folks out where I can is reward enough for me! Thanks again and have a lovely week.</p>
+				
+				<hr>
+				
+                <p>I split my wishlists into two main categories: Pet-Related and Collectables. Each category has it's own sub-sections in relation to either of the main categories. You can hover over pet items to view what/who each item is for.</p>
+				
+				<p>All items marked with a <span class="itemnc" style="background: #fff;padding: 0px 4px 2px;">pink border</span> are Neocash items. Looking to trade? I have a small collection of UFT NC items listed here:<br><i>https://impress.openneo.net/user/60848-mintychocolatelover/closet</i></p>
+				
+				<p>Hover over an item to view its name!</p>
+            </div>
+            
+            <div id="petrelated" class="section2" style="padding: 40px 50px;text-align: center;">
+                
+                <div class="wishbox1">
+                    <h3>Arielln</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/Arielln/1/4.png') -150px -45px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/paintbrush_pastel.gif" class="item" title="Pastel Paint Brush">
+                        <img src="https://images.neopets.com/items/petpetpaintbrush_spring.gif" class="item" title="Spring Petpet Paint Brush"> OR 
+                        <img src="https://images.neopets.com/items/cirrus_spring.gif" class="item" title="Spring Cirrus">
+                        <img src="https://images.neopets.com/items/ppp_dragonfly_nymph.gif" class="item" title=" Dragonfly Nymph">
+                        <img src="https://images.neopets.com/items/clo_irid_faerie_dress.gif" class="item" title="Iridescent Faerie Dress">
+                        <img src="https://images.neopets.com/items/mall_trink_springcirrus.gif" class="itemnc" title="PC: Spring Cirrus Companion (NC)">						
+                    </div>
+                </div>
+                
+                <div class="wishbox1">
+                    <h3>Norisy</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/Norisy/1/4.png') -120px -70px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/bg_mauv_back.gif" class="item" title="Mauve Magic Background">
+                        <img src="https://images.neopets.com/items/clo_cybunny_onthego_dress.gif" class="item" title="On The Go Cybunny Dress">
+                        <img src="https://images.neopets.com/items/clo_cybunny_onthego_makeup.gif" class="item" title="On the Go Cybunny Makeup">
+                        <img src="https://images.neopets.com/items/clo_fq2013_pants_spacefaerie.gif" class="item" title="Cosmic Space Faerie Leggings">
+                        <img src="https://images.neopets.com/items/gif_fony14_negg_staff.gif" class="item" title="Negg Staff">
+                        <img src="https://images.neopets.com/items/clo_y19haltot_bluegrundo_hh.gif" class="item" title="Magical Blue Grundo Plushie Handheld">
+                        <img src="https://images.neopets.com/items/fg_recoveringfaellie.gif" class="item" title="Recovering Faellie Foreground">
+                    </div>
+                </div>
+                
+                <div class="wishbox1">
+                    <h3>Pawberries</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/Pawberries/1/4.png') -125px -70px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/mall_acc_strawberrybunswig.gif" class="itemnc" title="Strawberry Ombre Wig with Buns (NC)">
+                        <img src="https://images.neopets.com/items/clo_strawberries_cream_dress.gif" class="item" title="Strawberries and Cream Dress">
+                        <img src="https://images.neopets.com/items/bg_applebob_pileofapples.gif" class="item" title="Piles of Apples Background">
+                    </div>
+                </div>
+                
+                <div class="wishbox1">
+                    <h3>cudelwithmekougra</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/cudelwithmekougra/1/4.png') -133px -50px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/plushiepaintbrush.gif" class="item" title="Plushie Paint Brush">
+                    </div>
+                </div>
+                
+                <div class="wishbox1">
+                    <h3>pandabarn</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/pandabarn/1/4.png') -125px -70px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/pot_newvneopet1555_blue.gif" class="item" title="Vandagyre Morphing Potion (any color)">
+                        <img src="https://images.neopets.com/items/xmaspaintbrush.gif" class="item" title="Christmas Paint Brush">
+                        <img src="https://images.neopets.com/items/pandaphant_white.gif" class="item" title="Pandaphant">
+                        <img src="https://images.neopets.com/items/mall_acc_paintbrushmarkings.gif" class="itemnc" title="Aspiring Artiste Body Paint (NC)">
+                        <img src="https://images.neopets.com/items/mall_acc_paintpalette.gif" class="itemnc" title="Handheld Paintbrush and Palette (NC)">
+                        <img src="https://images.neopets.com/items/mall_clo_paintoutfit.gif" class="itemnc" title="Paint Splattered Artist Outfit (NC)">
+                    </div>
+                </div>
+                
+                <div class="wishbox1">
+                    <h3>SunshineYou</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/SunshineYou/1/4.png') -133px -50px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/discopntbrush.gif" class="item" title="Disco Paint Brush">
+                        <img src="https://images.neopets.com/items/fireball_yellow.gif" class="item" title="Yellow Baby Fireball">
+                        <img src="https://images.neopets.com/items/ppp_springabee.gif" class="item" title="Springabee">
+                        <img src="https://images.neopets.com/items/mall_bg_babaaplains.gif" class="item" title="Grazing Baabaa Plains Background">
+                        <img src="https://images.neopets.com/items/clo_springabee_flower_wig.gif" class="item" title="Springabee Flower Wig">
+                        <img src="https://images.neopets.com/items/clo_asparagus_earrings.gif" class="item" title="Asparagus Earrings">
+                        <img src="https://images.neopets.com/items/mall_trink_paintingbirdhouse.gif" class="item" title="Painting Weewoo Houses Trinket">
+                    </div>
+                </div>
+                
+                <div class="wishbox1">
+                    <h3>Fritzger</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/Fritzger/1/4.png') -133px -50px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/petpetpet_glyme.gif" class="item" title="Glyme">
+                        <img src="https://images.neopets.com/items/mcc_bombjack_shrug.gif" class="item" title="Bomber Jacket Shrug">
+                        <img src="https://images.neopets.com/items/clo_meridell_shield.gif" class="item" title="Shiny Meridell Shield">
+                        <img src="https://images.neopets.com/items/gif_ac2014_enunte.gif" class="item" title="Camping at the Altador Cup">
+                        <img src="https://images.neopets.com/items/gif_shrubbery_deepdark.gif" class="item" title="Deep Dark Shrubbery">
+                    </div>
+                </div>
+                
+                <div class="wishbox1">
+                    <h3>turquoisio</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/turquoisio/1/4.png') -143px -50px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/relic_pntbrush.gif" class="item" title="Relic Paint Brush">
+                        <img src="https://images.neopets.com/items/desertpaintbrush.gif" class="item" title="Desert Paint Brush">
+                        <img src="https://images.neopets.com/items/paintbrush_water.gif" class="item" title="Water Paint Brush">
+                    </div>
+                </div>
+                
+                <div class="wishbox1">
+                    <h3>Goodnature</h3>
+                    <div class="wishpet" style="background: url('http://pets.neopets.com/cpn/Goodnature/1/4.png') -120px -70px;"></div>
+                    <div class="wishscroll">
+                        <img src="https://images.neopets.com/items/paintbrush_woodland.gif" class="item" title="Woodland Paint Brush">
+                        <img src="https://images.neopets.com/items/bikiwan.gif" class="item" title="Bikiwan">
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div id="collectables" class="section1">
+                <h3>Sand Gallery</h3>
+                <div class="wishbox2" style="border-radius: 20px;">
+                    <img src="https://images.neopets.com/items/tik_purplesand.gif" class="item" title="Bottle of Purple Sand">
+                    <img src="https://images.neopets.com/items/tiki_sand_sand.gif" class="item" title="Bottle of Sand Coloured Sand">
+                    <img src="https://images.neopets.com/items/tiki_sand_fancy.gif" class="item" title="Fancy Bottle of Sand">
+                    <img src="https://images.neopets.com/items/stamp_island_sand.gif" class="item" title="Bottle of Sand Stamp">
+                    <img src="https://images.neopets.com/items/bd_magic_grain.gif" class="item" title="Super Sand Grain">
+                    <img src="https://images.neopets.com/items/lds_scroll_kha.gif" class="item" title="Famous Sand Collections"><br>
+					
+					For a full list, visit:<br><i>https://items.jellyneo.net/mywishes/mintychocolatelover/387508/</i>
+                </div>
+                
+                <h3>Petpet Gallery</h3>
+                <div class="wishbox2" style="border-radius: 20px;">
+                    n / a
+                </div>
+                
+                <h3>Plushie Pets</h3>
+                <div class="wishbox2" style="border-radius: 20px;">
+                    <img src="https://images.neopets.com/items/toy_mutant_korbat.gif" class="item" title="Mutant Korbat Plushie">
+                    <img src="https://images.neopets.com/items/toy_shoyru_plushie.gif" class="item" title="Plushie Shoyru Plushie">
+                    <img src="https://images.neopets.com/items/toy_mutantlenny.gif" class="item" title="Mutant Lenny Plushie">
+                </div>
+                
+                <h3>Stamps: Other</h3>
+                <div class="wishbox2" style="border-radius: 20px;">
+                    <img src="https://images.neopets.com/items/sta_defenders_korbat.gif" class="item" title="Commemorative Defenders Stamp #3">
+                    <img src="https://images.neopets.com/items/sta_faerie_bubbles.gif" class="item" title="Faerie Bubbles Stamp">
+                    <img src="https://images.neopets.com/items/stamp_travel_jubjub.gif" class="item" title="Mystery Island Travel Stamp">
+                    <img src="https://images.neopets.com/items/sta_other_bottledfaerie.gif" class="item" title="Bottled Faerie Stamp">
+                    <img src="https://images.neopets.com/items/sta_lut_uni.gif" class="item" title="Lutari Uni Stamp">
+                    <img src="https://images.neopets.com/items/sta_hotdoghero.gif" class="item" title="Hot Dog Hero Stamp">
+                    <img src="https://images.neopets.com/items/sta_holo_rainbowpterifeather.gif" class="item" title="Rainbow Pteri Feather Stamp">
+                    <img src="https://images.neopets.com/items/sta_defenders_scorchio.gif" class="item" title="Commemorative Defenders Stamp #4">
+                    <img src="https://images.neopets.com/items/sta_other_labray.gif" class="item" title="Lab Ray Stamp">
+                    <img src="https://images.neopets.com/items/sta_other_goldmote.gif" class="item" title="Gold Mote Stamp">
+                    <img src="https://images.neopets.com/items/sta_coconut_golden.gif" class="item" title="Golden Coco Stamp">
+                    <img src="https://images.neopets.com/items/sta_shenkuumask.gif" class="item" title="Shenkuu Mask Stamp">
+                    <img src="https://images.neopets.com/items/stamp_travel_altador.gif" class="item" title="Altador Travel Stamp">
+                    <img src="https://images.neopets.com/items/sta_other_vonrooplush.gif" class="item" title="Count Von Roo Plushie Stamp">
+                    <img src="https://images.neopets.com/items/sta_lut_lutari.gif" class="item" title="Happy Lutari Stamp">
+                    <img src="https://images.neopets.com/items/sta_readytoroll.gif" class="item" title="Ready to Roll Stamp">
+                </div>
+                
+                <h3>Miscellaneous</h3>
+                <div class="wishbox2" style="border-radius: 20px;">
+                    <img src="https://images.neopets.com/items/food_bag_peanuts.gif" class="item" title="Bag of Peanuts">
+                    <img src="https://images.neopets.com/items/pot_chomby_rainbow.gif" class="item" title="Rainbow Chomby Morphing Potion">
+                    <img src="https://images.neopets.com/items/babypaintbrush.gif" class="item" title="Baby Paint Brush">
+					<img src="https://images.neopets.com/items/codestone10.gif" class="item" title="Tan Codestones (ANY)">
+					<img src="https://images.neopets.com/items/codestone13.gif" class="item" title="Red Codestones (ANY)">
+					<img src="https://images.neopets.com/items/dubloon3.gif" class="item" title="One, Two, and Five Dubloon Coins">
+                </div>
+                
+            </div>
+            
+            <div class="top" style="padding: 20px 0 0;text-align: center;">
+                <a href="#page2" class="page" style="border-radius: 50px;">︽ The Fam</a>
+                <a href="#cred" class="page" style="border-radius: 50px;">Sitely ︾</a>
+            </div>
+        </div>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <div id="cred" class="section" style="position: relative;">
+        <div id="credits" style="position: relative;max-width: 600px;border-radius: 10px;">
+            <h3>Credits & Special Thanks</h3>
+            <p>
+                Layout designs and template coding &copy; <a href="/~pandabarn">pandabarn (2024)</a><br>
+                Graphics/resources gathered from various sources, including:
+            </p>
+            <ul style="position: relative;">
+                <li><a href="/~cecira">LOLWAT. (backgrounds)</a></li>
+                <li><a href="/~Molidor">Molidor (backgrounds)</a></li>
+                <li><a href="/~lshvi">SYMBOLSPLZ! (symbols)</a></li>
+                <li><a href="/~Arieas">Bedazzled (bullets)</a></li>
+                <li class="inf"><i style="color: #5c2615;">and other unlinkables</i>
+                    <ul style="position: absolute;border-radius: 5px;">
+                        <li>subtlepatterns, imgur, etc</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>All other images and indicia &copy; <a href="/home">Neo Official</a>, since 1998. ALL RIGHTS RESERVED!</p>
+        </div>
+        <div class="btn" style="margin-top: -100px;">
+            <a href="#cover" class="page" style="border-radius: 50px;">↻ Cover</a>
+            <a href="/home" class="page" style="border-radius: 50px;">Exit ☛</a>
+        </div>
+        
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <div id="page2" class="section" style="position: relative;">
+        
+        <div class="sect2" style="position: relative;border-radius: 10px;">
+            <h2>My Neo-Family</h2>
+            
+            <a href="#hosts">Workers</a>
+            <a href="#sweets">Hearts & Tarts</a>
+            <a href="#beasts">Beasts & Mystics</a>
+            <a href="#adhd">ADHD Club</a>
+            <a href="#other">Other</a>
+            
+            <br><br>
+        </div>
+            
+        <div class="fixedcenter" style="position: relative;">
+            <div class="fixedbox1" style="position: relative;border-radius: 10px;">
+                
+                <div id="hosts" class="petnav">
+                    <h5>Petpage Hosts</h5>
+                    <a href="#MintyKayla" class="petlink"><img src="http://pets.neopets.com/cpn/MintyKayla/1/6.png"></a>
+                    <a href="#pandabarn" class="petlink"><img src="http://pets.neopets.com/cpn/pandabarn/1/6.png"></a>
+                    <a href="#lnputKey" class="petlink"><img src="http://pets.neopets.com/cpn/lnputKey/1/6.png"></a>
+                    <h5>BD Warriors</h5>
+                    <a href="#JaspertheTenth" class="petlink"><img src="http://pets.neopets.com/cpn/JaspertheTenth/1/6.png"></a>
+                    <a href="#Fritzger" class="petlink"><img src="http://pets.neopets.com/cpn/Fritzger/1/6.png" class="petlink"></a>
+                </div>
+
+                <br><br><br><br><br><br><br><br>
+                
+                <div id="sweets" class="petnav">
+                    <h5>Sweethearts</h5>
+                    <a href="#ShimmerFlaike" class="petlink"><img src="http://pets.neopets.com/cpn/ShimmerFlaike/1/6.png" class="petlink"></a>
+                    <a href="#SunshineYou" class="petlink"><img src="http://pets.neopets.com/cpn/SunshineYou/1/6.png"></a>
+                    <a href="#Meladorius" class="petlink"><img src="http://pets.neopets.com/cpn/Meladorius/1/6.png" class="petlink"></a>
+                    <a href="#Prismaa" class="petlink"><img src="http://pets.neopets.com/cpn/Prismaa/1/6.png"></a>
+                    <a href="#Arielln" class="petlink"><img src="http://pets.neopets.com/cpn/Arielln/1/6.png"></a>
+                    <a href="#madetothrow" class="petlink"><img src="http://pets.neopets.com/cpn/madetothrow/1/6.png"></a>
+                    <a href="#cudelwithmekougra" class="petlink"><img src="http://pets.neopets.com/cpn/cudelwithmekougra/1/6.png"></a>
+                    <a href="#Poufflin" class="petlink"><img src="http://pets.neopets.com/cpn/Poufflin/1/6.png"></a>
+                    <h5>Sweetarts</h5>
+                    <a href="#Pawberries" class="petlink"><img src="http://pets.neopets.com/cpn/Pawberries/1/6.png" class="petlink"></a>
+                    <a href="#Sulch" class="petlink"><img src="http://pets.neopets.com/cpn/Sulch/1/6.png" class="petlink"></a>
+                    <a href="#Squoofie" class="petlink"><img src="http://pets.neopets.com/cpn/Squoofie/1/6.png" class="petlink"></a>
+                    <a href="#Gingerye" class="petlink"><img src="http://pets.neopets.com/cpn/Gingerye/1/6.png" class="petlink"></a>
+                    <a href="#mintimintie" class="petlink"><img src="http://pets.neopets.com/cpn/mintimintie/1/6.png" class="petlink"></a>
+                    <a href="#Linda___Candy" class="petlink"><img src="http://pets.neopets.com/cpn/Linda___Candy/1/6.png"></a>
+                    <a href="#Brittlebee" class="petlink"><img src="http://pets.neopets.com/cpn/Brittlebee/1/6.png"></a>
+                    <br><br>
+                </div>
+
+                <br><br><br><br><br><br><br><br>
+                
+                <div id="beasts" class="petnav">
+                    <h5>Beasts</h5>
+                    <a href="#Swisaurus" class="petlink"><img src="http://pets.neopets.com/cpn/Swisaurus/1/6.png" class="petlink"></a>
+                    <a href="#Shneez" class="petlink"><img src="http://pets.neopets.com/cpn/Shneez/1/6.png" class="petlink"></a>
+                    <a href="#Peepacheep" class="petlink"><img src="http://pets.neopets.com/cpn/Peepacheep/1/6.png" class="petlink"></a>
+                    <a href="#LysEnchante" class="petlink"><img src="http://pets.neopets.com/cpn/LysEnchante/1/6.png" class="petlink"></a>
+                    <a href="#Scapegoating" class="petlink"><img src="http://pets.neopets.com/cpn/Scapegoating/1/6.png" class="petlink"></a>
+                    <a href="#__Tribble__" class="petlink"><img src="http://pets.neopets.com/cpn/__Tribble__/1/6.png"></a>
+                    <a href="#Akrimonious" class="petlink"><img src="http://pets.neopets.com/cpn/Akrimonious/1/6.png"></a>
+                    <h5>Mystics</h5>
+                    <a href="#Norisy" class="petlink"><img src="http://pets.neopets.com/cpn/Norisy/1/6.png"></a>
+                    <a href="#Falyska" class="petlink"><img src="http://pets.neopets.com/cpn/Falyska/1/6.png"></a>
+                    <a href="#Jeraptzi" class="petlink"><img src="http://pets.neopets.com/cpn/Jeraptzi/1/6.png"></a>
+                    <a href="#Goodnature" class="petlink"><img src="http://pets.neopets.com/cpn/Goodnature/1/6.png" class="petlink"></a>
+                    <a href="#Immaterialist" class="petlink"><img src="http://pets.neopets.com/cpn/Immaterialist/1/6.png" class="petlink"></a>
+                    <a href="#turquoisio" class="petlink"><img src="http://pets.neopets.com/cpn/turquoisio/1/6.png"></a>
+                    <a href="#Izlane" class="petlink"><img src="http://pets.neopets.com/cpn/Izlane/1/6.png"></a>
+                    <a href="#Keigie" class="petlink"><img src="http://pets.neopets.com/cpn/Keigie/1/6.png" class="petlink"></a>
+                    <br><br>
+                </div>
+
+                <br><br><br><br><br><br><br><br>
+                
+                <div id="adhd" class="petnav">
+                    <h5>ADHD Club</h5>
+                    <a href="#ForgetToSleep" class="petlink"><img src="http://pets.neopets.com/cpn/ForgetToSleep/1/6.png"></a>
+                    <a href="#ForgetToEat" class="petlink"><img src="http://pets.neopets.com/cpn/ForgetToEat/1/6.png"></a>
+                    <a href="#Fomeau" class="petlink"><img src="http://pets.neopets.com/cpn/Fomeau/1/6.png"></a>
+                    <a href="#vinny_is_lazy" class="petlink"><img src="http://pets.neopets.com/cpn/vinny_is_lazy/1/6.png"></a>
+                </div>
+
+                <br><br><br><br><br><br><br><br>
+                
+                <div id="other" class="petnav">
+                    <br><br><br><br>
+                    <a href="#ufa" class="ufbtn" style="border-radius: 50px;">Adopt/Trade</a>
+                    <a href="#rehomed" class="ufbtn" style="border-radius: 50px;">Past Pets</a>
+                    <a href="#album" class="ufbtn" style="border-radius: 50px;" title="~ U/C ~">Photo Album</a>
+                </div>
+
+                <br><br><br><br><br><br><br><br>
+                
+                
+            </div>
+            
+            <div class="fixedbox2" style="position: relative;border-radius: 10px;">
+                
+                <div id="MintyKayla" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/MintyKayla/1/5.png') -120px 0;"></div>
+                    <div class="petdesc">
+                        <h3>MintyKayla &rarr; <a href="/petlookup.phtml?=MintyKayla">visit</a></h3>
+                        <h4>the Tyrannian Uni</h4>
+                        <p>Once upon a time, I used to go by Kayla on this site. This gal has acted like my little neo persona, or fursona I suppose. As such, she is basically me! And her personality thus reflects mine, albeit a little more friendly and outgoing than I typically am :)</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/vacana_darigan.gif" class="p2">
+                            <p><b>Chewy</b> the Darigan Vacana</p>
+                        </div>
+                        <p>Chewy is a chaotic little rascal. Though he doesn't always show it appropriately, he LOVES people and just wants to have a good time and explore creepy tombs.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>Art</li>
+                            <li>Rainbows</li>
+                            <li>Shiny Objects</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>Spiders</li>
+                            <li>Passive-Aggression</li>
+                            <li>Running</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_stylish_neohome.gif" class="item" title="Stylish Neohome Background">
+                            <img src="https://images.neopets.com/items/fg_painting_on_easel.gif" class="item" title="Painting on Easel">
+                            <img src="https://images.neopets.com/items/toy_basketofyarn.gif" class="item" title="Basket of Yarn">
+                            <img src="https://images.neopets.com/items/clo_uni_pretspri_wig.gif" class="item" title="Pretty Spring Uni Wig">
+                            <img src="https://images.neopets.com/items/clo_fony14_eaststaff.gif" class="item" title="Easter Negg Scarf">
+                            <img src="https://images.neopets.com/items/mall_fon_faeriewings.gif" class="item" title="Sparkling Faerie Wings (NC)">
+                            <img src="https://images.neopets.com/items/mall_acc_smilingeyes.gif" class="item" title="Smiling Eyes Contacts (NC)">
+                            <img src="https://images.neopets.com/items/mall_facepaint_freckles.gif" class="item" title="Adorable Freckles (NC)">
+                            <img src="https://images.neopets.com/items/clo_opal_uni_horn.gif" class="item" title="Opal Uni Horn">
+                            <img src="https://images.neopets.com/items/clo_opal_uni_markings.gif" class="item" title="Opal Uni Markings">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                        <div class="aright">
+                            <img src="https://file.garden/ZsPZ-PBIKymZ1YMN/folio/btn1.png" style="margin-bottom: 2px;"><br>
+                            Host of <i>This Portfolio</i>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="pandabarn" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/pandabarn/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>pandabarn &rarr; <a href="/petlookup.phtml?=pandabarn">visit</a></h3>
+                        <h4>the Blue Yurble</h4>
+                        <p>A lovely little creative, Panda loves to paint and sleep in her spare time. Though she has a rather robust imagination, she is NOT, in fact, very adventurous. Indeed, she is a firm homebody, and would much prefer curling up in a warm corner of her barn than explore about. She isn't too fond of the hustle of city-life, or the chaos of busy-bodies, though she wouldn't hesitate to lend a helping hand where needed.</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/faerie_pet5.gif" class="p2">
+                            <p><b>Harri</b> the Harris</p>
+                        </div>
+                        <p>Some day Panda hopes to be painted Brown like the earth. She's also a bit obsessed with anything "Panda" related, so someday she'll likely get a pandaphant.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>Crafting</li>
+                            <li>Dreaming</li>
+                            <li>Music</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>Shopping</li>
+                            <li>The City</li>
+                            <li>Waking Up Early</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_cosy_barn.gif" class="item" title="Cosy Barn Background">
+                            <img src="https://images.neopets.com/items/4dendi8gg3.gif" class="item" title="Painting Rainbows on an Easel Trinket (NC)">
+                            <img src="https://images.neopets.com/items/acc_facebandage.gif" class="item" title="Face Bandage">
+                            <img src="https://images.neopets.com/items/clo_artist_smock.gif" class="item" title="Artist Smock">
+                            <img src="https://images.neopets.com/items/sch_yurble_artpallet.gif" class="item" title="Yurble Artist Palette">
+                            <img src="https://images.neopets.com/items/sch_yurble_artbrush.gif" class="item" title="Yurble Artist Brush">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                        <div class="alignright">
+                            <img src="https://file.garden/ZsPZ-PBIKymZ1YMN/bts/ED1_btn.gif" style="margin-bottom: 2px;"><br>
+                            Host of <a href="/~pandabarn">Panda Barn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="lnputKey" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/lnputKey/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>lnputKey (i/l swap) &rarr; <a href="/petlookup.phtml?=lnputKey">visit</a></h3>
+                        <h4>the Pirate Techo</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/rotawheel_blue.gif" class="p2">
+                            <p><b>...Loading...</b> the Rotawheel</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/85amfmb55i.gif" class="item" title="Blackhole Background">
+                            <img src="https://images.neopets.com/items/79iki2jc33.gif" class="item" title="Virtupets Delivery Ship Foreground">
+                            <img src="https://images.neopets.com/items/f6db0dbh9j.gif" class="item" title="Vaporwave Hacker Foreground">
+                            <img src="https://images.neopets.com/items/clo_gamingheadphones.gif" class="item" title="Gaming Headphones">
+                            <img src="https://images.neopets.com/items/clo_squareblack_glasses.gif" class="item" title="Black Square Glasses">
+                            <img src="https://images.neopets.com/items/acc_voiddampener.gif" class="item" title="Void Dampener Prototype">
+                            <img src="https://images.neopets.com/items/clo_wrench_wonderclaw.gif" class="item" title="Bigsby Shadingtons Wrench">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                        <div class="alignright">
+                            <img src="https://file.garden/ZsPZ-PBIKymZ1YMN/bts/codeunlocked.gif" style="margin-bottom: 2px;"><br>
+                            Host of <a href="/~lnputkey">Code Unlocked</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="JaspertheTenth" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/JaspertheTenth/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>JaspertheTenth &rarr; <a href="/petlookup.phtml?=JaspertheTenth">visit</a></h3>
+                        <h4>the Royal Jetsam</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/nuranna_tyrannian.gif" class="p2">
+                            <p><b>Tong</b> the Tyrannian Nuranna</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_underwater.gif" class="item" title="Underwater Background">
+                            <img src="https://images.neopets.com/items/gnn8420cli.gif" class="item" title="Kelp Forest Trinket">
+                            <img src="https://images.neopets.com/items/pb_jetsam_royalboycrown.gif" class="item" title="Royal Boy Jetsam Crown">
+                            <img src="https://images.neopets.com/items/pb_jetsam_royalboyrobes.gif" class="item" title="Royal Boy Jetsam Robes">
+                            <img src="https://images.neopets.com/items/pb_jetsam_royalboycuffs.gif" class="item" title="Royal Boy Jetsam Golden Cuffs">
+                            <img src="https://images.neopets.com/items/pb_jetsam_royalboytailcov.gif" class="item" title="Royal Boy Jetsam Tail Cover">
+                            <img src="https://images.neopets.com/items/pb_jetsam_royaltrident.gif" class="item" title="Royal Boy Jetsam Trident">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/darkfaerie_wand.gif" class="item" title="Wand of the Dark Faerie">
+                            <img src="https://images.neopets.com/items/bd_gra&pesofwrath.gif" class="item" title="G*apes of Wrath">
+                            <img src="https://images.neopets.com/items/magic_amulet&water.gif" class="item" title="Thyoras Tear">
+                            <img src="https://images.neopets.com/items/ac_bd_thundersticks.gif" class="item" title="Thunder Sticks">
+                            <img src="https://images.neopets.com/items/bd_spookyelixir.gif" class="item" title="Cursed Elixir">
+                            <img src="https://images.neopets.com/items/bd_ddy18_faerieheal.gif" class="item" title="Faerie Healing Dust">
+                            <img src="https://images.neopets.com/items/bd_charismacharm_hanso.gif" class="item" title="Hanso Charisma Charm">
+                            <img src="https://images.neopets.com/items/bd_tyweof2013_rng_sway.gif" class="item" title="Ring of the Sway">
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Fritzger" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Fritzger/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Fritzger &rarr; <a href="/petlookup.phtml?=Fritzger">visit</a></h3>
+                        <h4>the Spotted Kougra</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/petpet_des_nuk.gif" class="p2">
+                            <p><b>A CURSE ON YOU!</b> the Nuk</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_enchanted_jungle.gif" class="item" title="Enchanted Jungle Background">
+                            <img src="https://images.neopets.com/items/clo_pirate_kougra_headscarf.gif" class="item" title="Pirate Kougra Head Scarf">
+                            <img src="https://images.neopets.com/items/clo_pirate_kougra_earring.gif" class="item" title="Pirate Kougra Earring">
+                            <img src="https://images.neopets.com/items/clo_spear_tyrannian.gif" class="item" title="Tyrannian Spear">
+                            <img src="https://images.neopets.com/items/gif_brown_toadstool.gif" class="item" title="Brown Toadstool">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bd_heavybattlehammer.gif" class="item" title="Rediculously Heavy Battle Hammer">
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="ShimmerFlaike" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/ShimmerFlaike/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>ShimmerFlaike &rarr; <a href="/petlookup.phtml?=ShimmerFlaike">visit</a></h3>
+                        <h4>the Sketch Kau</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/clo_snowy_scarf.gif" class="item" title="Snowy Scarf">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="SunshineYou" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/SunshineYou/1/5.png') -143px 0;"></div>
+                    <div class="petdesc">
+                        <h3>SunshineYou &rarr; <a href="/petlookup.phtml?=SunshineYou">visit</a></h3>
+                        <h4>the Yellow Kacheek</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/pets_poppit.gif" class="p2">
+                            <p><b>B</b> the Poppit</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_grassmeadow.gif" class="item" title="Grassy Meadow Background">
+                            <img src="https://images.neopets.com/items/clo_fg_campingtable.gif" class="item" title="Camping Picnic Table Foreground">
+                            <img src="https://images.neopets.com/items/mall_starshower.gif" class="item" title="Sparkling Star Shower">
+                            <img src="https://images.neopets.com/items/clo_kacheek_nature_wig.gif" class="item" title="Nature Kacheek Wig">
+                            <img src="https://images.neopets.com/items/clo_tattered.gif" class="item" title="Tattered Jumpsuit">
+                            <img src="https://images.neopets.com/items/clo_sunflower_sandals.gif" class="item" title="Sunflower Sandals">
+                            <img src="https://images.neopets.com/items/clo_acc_sinjoyhandbag.gif" class="item" title="Chocolate Bar Handbag">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Meladorius" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Meladorius/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Meladorius &rarr; <a href="/petlookup.phtml?=Meladorius">visit</a></h3>
+                        <h4>the Blue Xweetok</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/youlee_white.gif" class="p2">
+                            <p><b>Clef</b> the Ukali</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/clo_Glitter_Sparkle_bg.gif" class="item" title="Glitter and Sparkle Background">
+                            <img src="https://images.neopets.com/items/mall_floorharp.gif" class="item" title="Magical Floor Harp">
+                            <img src="https://images.neopets.com/items/clo_xweetok_party_wig.gif" class="item" title="Xweetok Party Wig">
+                            <img src="https://images.neopets.com/items/mall_facepaint_freckles.gif" class="item" title="Adorable Freckles (NC)">
+                            <img src="https://images.neopets.com/items/clo_doctortop.gif" class="item" title="Doctor Top">
+                            <img src="https://images.neopets.com/items/acc_begbandana_red.gif" class="item" title="Red Beginners Bandana">
+                            <img src="https://images.neopets.com/items/mall_wingedaltsandles.gif" class="item" title="Winged Altadorian Sandals">
+                            <img src="https://images.neopets.com/items/inst_autumnguitar.gif" class="item" title="Autumn Guitar">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Prismaa" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Prismaa/1/5.png') -129px -30px;"></div>
+                    <div class="petdesc">
+                        <h3>Prismaa &rarr; <a href="/petlookup.phtml?=Prismaa">visit</a></h3>
+                        <h4>the Pastel Vandagyre</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/clo_bg_treehouse.gif" class="item" title="Treehouse Background">
+                            <img src="https://images.neopets.com/items/mall_sunshower.gif" class="item" title="Sun Shower (NC)">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Arielln" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Arielln/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Arielln &rarr; <a href="/petlookup.phtml?=Arielln">visit</a></h3>
+                        <h4>the Cloud Bori</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/faerie_pet4.gif" class="p2">
+                            <p><b>Flutter</b> the Cirrus</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_bk_faerieland_can.gif" class="item" title="Faerieland Garden Background">
+                            <img src="https://images.neopets.com/items/gif_pret_flo_fg.gif" class="item" title="Pretty Flowers Foreground">
+                            <img src="https://images.neopets.com/items/clo_irid_faerie_crown.gif" class="item" title="Iridescent Faerie Crown">
+                            <img src="https://images.neopets.com/items/mall_airbubblenecklace.gif" class="item" title="Air Faerie Bubble Necklace (NC)">
+                            <img src="https://images.neopets.com/items/clo_pinkknit_purse.gif" class="item" title="Pink Knit Purse">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="madetothrow" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/madetothrow/1/5.png') -133px -10px;"></div>
+                    <div class="petdesc">
+                        <h3>madetothrow &rarr; <a href="/petlookup.phtml?=madetothrow">visit</a></h3>
+                        <h4>the Toy Jubjub</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/gpp_taigar.gif" class="p2">
+                            <p><b>Thumper</b> the Taigar</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_waitingrestock.gif" class="item" title="Waiting for Restock Background">
+                            <img src="https://images.neopets.com/items/clo_trudy_skaterflannel.gif" class="item" title="Skater Flannel and Hoodie Combo">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="cudelwithmekougra" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/cudelwithmekougra/1/5.png') -123px 0;"></div>
+                    <div class="petdesc">
+                        <h3>cudelwithmekougra &rarr; <a href="/petlookup.phtml?=cudelwithmekougra">visit</a></h3>
+                        <h4>the Blue Kougra</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_neopiacentral_neohome_back.gif" class="item" title="Neopia Central Neohome Background">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Poufflin" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Poufflin/1/5.png') -123px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Poufflin &rarr; <a href="/petlookup.phtml?=Poufflin">visit</a></h3>
+                        <h4>the Plushie Shoyru</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/faellie_brown.gif" class="p2">
+                            <img src="https://images.neopets.com/items/ppp_ditrey.gif" class="p3">
+                            <p><b>Pretty</b> the Brown Faellie and their <i>Ditrey</i></p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_gnorbushearing.gif" class="item" title="Shearing Room Background">
+                            <img src="https://images.neopets.com/items/clo_brownwoolscarf.gif" class="item" title="Brown Winter Scarf">
+                            <img src="https://images.neopets.com/items/clo_mess_shoyru_bag.gif" class="item" title="Messenger Shoyru Bag">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Pawberries" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Pawberries/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Pawberries &rarr; <a href="/petlookup.phtml?=Pawberries">visit</a></h3>
+                        <h4>the Strawberry Aisha</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/melton_blue.gif" class="p2">
+                            <p><b>❤️hettybearpaint</b> the Blue Melton</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_garden_view.gif" class="item" title="View of the Garden">
+                            <img src="https://images.neopets.com/items/gif_redmistfg.gif" class="item" title="Strange Red Mist">
+                            <img src="https://images.neopets.com/items/clo_strawberry_aisha_collar.gif" class="item" title="Strawberry Aisha Collar">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Sulch" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Sulch/1/5.png') -143px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Sulch &rarr; <a href="/petlookup.phtml?=Sulch">visit</a></h3>
+                        <h4>the Candy Lutari</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/spooky_petpet_fire.gif" class="p2">
+                            <p><b>Charli</b> the Melton</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_bk_faerieland_can.gif" class="item" title="Faerieland Garden Background">
+                            <img src="https://images.neopets.com/items/clo_shirt_white.gif" class="item" title="Basic White Shirt">
+                            <img src="https://images.neopets.com/items/clo_fluffydragon_lutari_tail.gif" class="item" title="Fluffy Dragon Lutari Tail">
+                            <img src="https://images.neopets.com/items/clo_walking_cane_spikes.gif" class="item" title="Walking Can with Spikes">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Squoofie" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Squoofie/1/5.png') -123px -15px;"></div>
+                    <div class="petdesc">
+                        <h3>Squoofie &rarr; <a href="/petlookup.phtml?=Squoofie">visit</a></h3>
+                        <h4>the Chocolate Gelert</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/symol_glowing.gif" class="p2">
+                            <p><b>Sir Bob of Geraptiku</b> the Glowing Symol</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_baelliabackyard.gif" class="item" title="Baelias Backyard Background">
+                            <img src="https://images.neopets.com/items/clo_wooden_wings_fire.gif" class="item" title="Fiery Wooden Wings">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Gingerye" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Gingerye/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Gingerye &rarr; <a href="/petlookup.phtml?=Gingerye">visit</a></h3>
+                        <h4>the Spotted Vandagyre</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/jinjah_brown.gif" class="p2">
+                            <p><b>Nutmeg</b> the Jinjah</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/clo_bg_chocolateshop.gif" class="item" title="Choco Creations Chocolate Shop Background">
+                            <img src="https://images.neopets.com/items/mall_floatingsoupfaerie.gif" class="item" title="Floating Soup Faerie Doll (NC)">
+                            <img src="https://images.neopets.com/items/clo-_top_crop.gif" class="item" title="Crop Top Dress">
+                            <img src="https://images.neopets.com/items/clo_acc_sinjoyhandbag.gif" class="item" title="Chocolate Bar Handbag">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="mintimintie" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/mintimintie/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>mintimintie &rarr; <a href="/petlookup.phtml?=mintimintie">visit</a></h3>
+                        <h4>the Speckled Peophin</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/pet_winter_3.gif" class="p2">
+                            <p><b>Peppurr</b> the Tasu</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_raspberrypatch.gif" class="item" title="Raspberry Patch Background">
+                            <img src="https://images.neopets.com/items/clo_asparagus_scarf.gif" class="item" title="Asparagus Scarf">
+                            <img src="https://images.neopets.com/items/clo_asparagus_gloves.gif" class="item" title="Fingerless Asparagus Gloves">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Linda___Candy" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Linda___Candy/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Linda___Candy &rarr; <a href="/petlookup.phtml?=Linda___Candy">visit</a></h3>
+                        <h4>the Candy Uni</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_grassmeadow.gif" class="item" title="Grassy Meadow">
+                            <img src="https://images.neopets.com/items/mall_fg_balloonheart.gif" class="item" title="Heart Balloon Arch (NC)">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Brittlebee" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Brittlebee/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Brittlebee &rarr; <a href="/petlookup.phtml?=Brittlebee">visit</a></h3>
+                        <h4>the Baby Gnorbu</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/angelpuss.gif" class="p2">
+                            <p><b>Amelia</b> the Angelpuss</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_gameroom.gif" class="item" title="Gameroom Background">
+                            <img src="https://images.neopets.com/items/gif_ac2014_ilofhi.gif" class="item" title="Impressive Plushie Collection">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Swisaurus" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Swisaurus/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Swisaurus &rarr; <a href="/petlookup.phtml?=Swisaurus">visit</a></h3>
+                        <h4>the Faerie Grarrl</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/ipnib_green.gif" class="p2">
+                            <p><b>Rex</b> the Gikerot</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_stans_stash.gif" class="item" title="Stans Stash Background">
+                            <img src="https://images.neopets.com/items/gif_rock_cave_fg.gif" class="item" title="Cave Foreground">
+                            <img src="https://images.neopets.com/items/fg_barrels_of_fruit.gif" class="item" title="Barrels of Fruit Foreground">
+                            <img src="https://images.neopets.com/items/acc_begbandana_yellow.gif" class="item" title="Yellow Beginners Bandana">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Shneez" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Shneez/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Shneez &rarr; <a href="/petlookup.phtml?=Shneez">visit</a></h3>
+                        <h4>the Pirate Krawk</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_forgotten_shore.gif" class="item" title="Forgotten Shore Background">
+                            <img src="https://images.neopets.com/items/fg_lake_krawk.gif" class="item" title="Lake Krawk Foreground">
+                            <img src="https://images.neopets.com/items/clo_lake_krawk_contacts.gif" class="item" title="Lake Krawk Contacts">
+                            <img src="https://images.neopets.com/items/clo_lake_krawk_hair.gif" class="item" title="Lake Krawk Hair">
+                            <img src="https://images.neopets.com/items/clo_jhudora_shimmer.gif" class="item" title="Jhudora Faerie Shimmer">
+                            <img src="https://images.neopets.com/items/gif_asparagus_hand.gif" class="item" title="Handful of Asparagus">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Peepacheep" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Peepacheep/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Peepacheep &rarr; <a href="/petlookup.phtml?=Peepacheep">visit</a></h3>
+                        <h4>the Baby Pteri</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/6n4941d0e1.gif" class="item" title="Void Star Gazing Birthday Background">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="LysEnchante" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/LysEnchante/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>LysEnchante &rarr; <a href="/petlookup.phtml?=LysEnchante">visit</a></h3>
+                        <h4>the Mutant Lenny</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/niptor_mutant.gif" class="p2">
+                            <img src="https://images.neopets.com/items/petpetpet_mystery.gif" class="p2">
+                            <p><b>Jumpy</b> the Mutant Niptor</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_forest_clear_myst.gif" class="item" title="Mysterious Forest Clearing Background">
+                            <img src="https://images.neopets.com/items/fg_dreary.gif" class="item" title="Dreary Foreground">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Scapegoating" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Scapegoating/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Scapegoating &rarr; <a href="/petlookup.phtml?=Scapegoating">visit</a></h3>
+                        <h4>the Mutant Ixi</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_darigancitadel.gif" class="item" title="Creepy Darigan Citadel Background">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="__Tribble__" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/__Tribble__/1/5.png') -143px 0;"></div>
+                    <div class="petdesc">
+                        <h3>__Tribble__ &rarr; <a href="/petlookup.phtml?=__Tribble__">visit</a></h3>
+                        <h4>the Tyrannian Lupe</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/gruslen_mutant.gif" class="p2">
+                            <p><b>Ugga Ugg</b> the Mutant Gruslen</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_bones.gif" class="item" title="Bone Vault Background">
+                            <img src="https://images.neopets.com/items/toy_pileofbones.gif" class="item" title="Pile of Bones">
+                            <img src="https://images.neopets.com/items/8c7jdmhgja.gif" class="item" title="Fluffy Gruslen Rug Wearable">
+                            <img src="https://images.neopets.com/items/clo_necklace_holidaytree.gif" class="item" title="Holiday Tree Necklace">
+                            <img src="https://images.neopets.com/items/iag4mal55l.gif" class="item" title="Skull Punch Handheld">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Akrimonious" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Akrimonious/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Akrimonious &rarr; <a href="/petlookup.phtml?=Akrimonious">visit</a></h3>
+                        <h4>the Wraith Shoyru</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/mall_giftbox_basic.gif" class="item" title="none">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Norisy" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Norisy/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Norisy &rarr; <a href="/petlookup.phtml?=Norisy">visit</a></h3>
+                        <h4>the Cloud Cybunny</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/altachuck_cloud.gif" class="p2">
+                            <img src="https://images.neopets.com/items/ppp_strale.gif" class="p3">
+                            <p><b>Ice</b> the Cloud Altachuck and his <i>Strale</i></p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/adi7a767nn.gif" class="item" title="Comet Across The Sky Background">
+                            <img src="https://images.neopets.com/items/gro_fyoras_eyeshadow.gif" class="item" title="Fyoras Eyeshadow">
+                            <img src="https://images.neopets.com/items/clo_cybunny_shenkuu_earrings.gif" class="item" title="Shenkuu Cybunny Earrings">
+                            <img src="https://images.neopets.com/items/gh52h31lhk.gif" class="item" title="Juni Nose Boops Trinket">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Falyska" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Falyska/1/5.png') -123px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Falyska &rarr; <a href="/petlookup.phtml?=Falyska">visit</a></h3>
+                        <h4>the Faerie Gnorbu</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/mall_giftbox_basic.gif" class="item" title="none">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Jeraptzi" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Jeraptzi/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Jeraptzi &rarr; <a href="/petlookup.phtml?=Jeraptzi">visit</a></h3>
+                        <h4>the Faerie Bori</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/carmariller_yellow.gif" class="p2">
+                            <p><b>Mibby</b> the Carmariller</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/clo_mystery_swirl_bg.gif" class="item" title="Mystery Swirl Background">
+                            <img src="https://images.neopets.com/items/fg_glade_evening.gif" class="item" title="Evening at the Glade Foreground">
+                            <img src="https://images.neopets.com/items/113m85l189.gif" class="item" title="Frozen Pendant">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Goodnature" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Goodnature/1/5.png') -123px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Goodnature &rarr; <a href="/petlookup.phtml?=Goodnature">visit</a></h3>
+                        <h4>the Yellow Cybunny</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_kiko_lake_relaxing.gif" class="item" title="Relaxing Kiko Lake Background">
+                            <img src="https://images.neopets.com/items/vor_mossy_rock.gif" class="item" title="Mossy Rock">
+                            <img src="https://images.neopets.com/items/clo_acc_illusennecklace.gif" class="item" title="Illusen Half Necklace">
+                            <img src="https://images.neopets.com/items/mall_hh_succulentbouquet.gif" class="item" title="Succulent Bouquet (NC)">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Immaterialist" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Immaterialist/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Immaterialist &rarr; <a href="/petlookup.phtml?=Immaterialist">visit</a></h3>
+                        <h4>the Stealthy Aisha</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/mall_sc_quasar.gif" class="p2">
+                            <p><b>Bishop</b> the Nebularis</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/mall_giftbox_basic.gif" class="item" title="none">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="turquoisio" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/turquoisio/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>turquoisio &rarr; <a href="/petlookup.phtml?=turquoisio">visit</a></h3>
+                        <h4>the Pirate Draik</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/charnie_pirate.gif" class="p2">
+                            <p><b>buuurrtty</b> the Pirate Charnie</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_insidewell.gif" class="item" title="Inside the Wishing Well Background">
+                            <img src="https://images.neopets.com/items/toy_acv_fgcolosseumarch.gif" class="item" title="Altador Cup Colosseum Archway">
+                            <img src="https://images.neopets.com/items/clo_pirate_draik_hat.gif" class="item" title="Pirate Draik Hat">
+                            <img src="https://images.neopets.com/items/clo_pirate_draik_earring.gif" class="item" title="Pirate Draik Gold Earring">
+                            <img src="https://images.neopets.com/items/clo_darik_knightf_uparm.gif" class="item" title="Lady Draik Knight Upper Armor">
+                            <img src="https://images.neopets.com/items/clo_pirate_draik_hook.gif" class="item" title="Pirate Draik Hook">
+                            <img src="https://images.neopets.com/items/clo_pirate_draik_coverhind.gif" class="item" title="Pirate Draik Gold Tail Ornament">
+                            <img src="https://images.neopets.com/items/gif_stave_twistedgolden.gif" class="item" title="Twisted Golden Stave">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Izlane" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Izlane/1/5.png') -123px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Izlane &rarr; <a href="/petlookup.phtml?=Izlane">visit</a></h3>
+                        <h4>the Mutant Korbat</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/chuchuana_mutant.gif" class="p2">
+                            <p><b>Chirp</b> the Mutant Chuchuana</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_maldarkfaerie.gif" class="item" title="Malicious Dark Faeries Background">
+                            <img src="https://images.neopets.com/items/gif_foreground_forgetmenot.gif" class="item" title="Forget Me Not Foreground">
+                            <img src="https://images.neopets.com/items/gif_shrubbery_deepdark.gif" class="item" title="Deep Dark Shrubbery">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Keigie" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Keigie/1/5.png') -123px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Keigie &rarr; <a href="/petlookup.phtml?=Keigie">visit</a></h3>
+                        <h4>the Faerie Hissi</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/shpp_kazeriu_purple.gif" class="p2">
+                            <p><b>Contemplation</b> the Kazeriu</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_scenic_mountain_top.gif" class="item" title="Scenic Mountain Top Background">
+                            <img src="https://images.neopets.com/items/1ah0b9ehnl.gif" class="item" title="Stack of Dacardite Foreground">
+                            <img src="https://images.neopets.com/items/clo_hiss_metallic_head.gif" class="item" title="Metallic Hissi Head">
+                            <img src="https://images.neopets.com/items/clo_halloween_hissi_skullhelm.gif" class="item" title="Halloween Hissi Skeleton Helm">
+                            <img src="https://images.neopets.com/items/clo_halloween_hissi_ribjack.gif" class="item" title="Halloween Hissi Skeleton Body Cover">
+                            <img src="https://images.neopets.com/items/clo_halloween_hissi_bonegloves.gif" class="item" title="Halloween Hissi Skeleton Gloves">
+                            <img src="https://images.neopets.com/items/clo_halloween_hissi_bonehind.gif" class="item" title="Halloween Hissi Skeleton Hind Cover">
+                            <img src="https://images.neopets.com/items/clo_plasmaeffect.gif" class="item" title="Plasma Effect">
+                            <img src="https://images.neopets.com/items/plu_advc2013_kazerhhp.gif" class="item" title="Kazeriu Handheld Plushie">
+                            <img src="https://images.neopets.com/items/gif_stave_twistedgolden.gif" class="item" title="Twisted Golden Stave">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="ForgetToSleep" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/ForgetToSleep/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>ForgetToSleep &rarr; <a href="/petlookup.phtml?=ForgetToSleep">visit</a></h3>
+                        <h4>the Grey Kyrii</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/6n4941d0e1.gif" class="item" title="Void Star Gazing Birthday Background">
+                            <img src="https://images.neopets.com/items/clo_infinity_shirt_rainbow.gif" class="item" title="Neurodivergent Infinity Shirt">
+                            <img src="https://images.neopets.com/items/clo_gamingheadphones.gif" class="item" title="Gaming Headphones">
+                            <img src="https://images.neopets.com/items/ac_hacked_computer.gif" class="item" title="Dr Sloth Hacked Computer">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="ForgetToEat" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/ForgetToEat/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>ForgetToEat &rarr; <a href="/petlookup.phtml?=ForgetToEat">visit</a></h3>
+                        <h4>the Green Zafara</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/hall_petpet6.gif" class="p2">
+                            <p><b>Nothing</b> the No Petpet</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/g655424lfl.gif" class="item" title="Nyxs Abandoned Home Background">
+                            <img src="https://images.neopets.com/items/acc_begbandana_blue.gif" class="item" title="Blue Beginners Bandana">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="Fomeau" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/Fomeau/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>Fomeau &rarr; <a href="/petlookup.phtml?=Fomeau">visit</a></h3>
+                        <h4>the Red Korbat</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/symol_robot.gif" class="p2">
+                            <p><b>Cy</b> the Robot Symol</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/bg_station_silhouette.gif" class="item" title="Space Station Silhouette Background">
+                            <img src="https://images.neopets.com/items/b08e7mb613.gif" class="item" title="Robot Warf Companion (NC)">
+                            <img src="https://images.neopets.com/items/clo_robot_korbat_craniumhousin.gif" class="item" title="Robot Korbat Cranium Housing">
+                            <img src="https://images.neopets.com/items/clo_robot_korbat_bodyhousing.gif" class="item" title="Robot Korbat Body Housing">
+                            <img src="https://images.neopets.com/items/clo_robot_korbat_winghousing.gif" class="item" title="Robot Korbat Wing Housing">
+                            <img src="https://images.neopets.com/items/clo_robot_korbat_tailhousing.gif" class="item" title="Robot Korbat Tail Housing">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="vinny_is_lazy" class="petdisplay">
+                    <div class="petimage" style="background: url('http://pets.neopets.com/cpn/vinny_is_lazy/1/5.png') -133px 0;"></div>
+                    <div class="petdesc">
+                        <h3>vinny_is_lazy &rarr; <a href="/petlookup.phtml?=vinny_is_lazy">visit</a></h3>
+                        <h4>the Faerie Lenny</h4>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus. Ut quis gravida metus. In hac habitasse platea dictumst. Fusce eget finibus eros, quis pharetra lorem. Phasellus eget ultrices purus, sed imperdiet risus. Duis rhoncus massa nec neque</p>
+                        <div class="ppp" style="border-radius: 100px;">
+                            <img src="https://images.neopets.com/items/lutra_blue.gif" class="p2">
+                            <p><b>Vinny</b> the Lutra</p>
+                        </div>
+                        <p>Praesent blandit in augue ut consequat. Ut gravida tincidunt lacus, quis finibus lorem aliquet eu. Maecenas quis urna risus.</p>
+                        <ul class="left">
+                            <li class="listhead">~ Likes ~</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                            <li>likehere</li>
+                        </ul>
+                        <ul class="right">
+                            <li class="listhead">~ Dislikes ~</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                            <li>dislikehere</li>
+                        </ul>
+                        <h6>Closet</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            <img src="https://images.neopets.com/items/mall_giftbox_basic.gif" class="item" title="none">
+                        </div>
+                        <h6>Equipment</h6>
+                        <div class="pocket" style="border-radius: 20px;">
+                            ~ none ~
+                        </div>
+                        
+                        <br><br>
+                    </div>
+                </div>
+
+                <br><br><br><br>
+
+                <div id="ufa" class="petdisplay">
+                    <h3>Adoption Department</h3>
+                    <p>Interested? <a href="/neomessages.phtml?type=send&recipient=mintychocolatelover">Get in Touch!</a></p>
+                    <h4>Up For Adoption</h4>
+                    <p style="text-align: left;"><b>Terms:</b> Generally any pets up for adoption are free game for any reason, though it's always preferable that they find good homes. Interested? Send a neomail my way and tell me who you want and why. Doesn't need to be elaborate. I may even be willing to reserve a pet for you if you need to make space. Don't be afraid to ask!</p>
+                    <div class="petother">
+                        <img src="http://pets.neopets.com/cpn/Linda___Candy/1/2.png">
+                        <h3><a href="/petlookup.phtml?=Linda___Candy">Linda___Candy</a></h3>
+                        <h4>the Candy Uni</h4>
+                        <p>
+                            <b>Status:</b> UFA<br>
+                            <b>Petpet:</b> none<br>
+                            <b>Special:</b> none<br>
+                        </p>
+                    </div>
+                    <div class="petother">
+                        <img src="http://pets.neopets.com/cpn/vinny_is_lazy/1/2.png">
+                        <h3><a href="/petlookup.phtml?=vinny_is_lazy">vinny_is_lazy</a></h3>
+                        <h4>the Faerie Lenny</h4>
+                        <p>
+                            <b>Status:</b> UFA<br>
+                            <b>Petpet:</b> Lutra<br>
+                            <b>Special:</b> Age Trophy (Y7)<br>
+                        </p>
+                    </div>
+                    <br><br>
+                    <h4>Up For Trade</h4>
+                    <p style="text-align: left;"><b>Seeking:</b> Pets of any color/species with capped, RW/RN/Fantasy names (I don't mind compounds). I like lots of things, so don't be afraid to send an offer. You can maybe get a feel for the kinds of names I like by looking at my current permies.</p>
+                    <p>Also seeking names related to ADHD (to go with ForgetToEat & ForgetToSleep).</p>
+                    <div class="petother">
+                        <img src="http://pets.neopets.com/cpn/Akrimonious/1/2.png">
+                        <h3><a href="/petlookup.phtml?=Akrimonious">Akrimonious</a></h3>
+                        <h4>the Wraith Shoyru</h4>
+                        <p>
+                            <b>Status:</b> UFT<br>
+                            <b>Petpet:</b> none<br>
+                            <b>Special:</b> MS Acrimonious<br>
+                        </p>
+                    </div>
+                    <div class="petother">
+                        <img src="http://pets.neopets.com/cpn/Scapegoating/1/2.png">
+                        <h3><a href="/petlookup.phtml?=Fomeau">Scapegoating</a></h3>
+                        <h4>the Mutant Ixi</h4>
+                        <p>
+                            <b>Status:</b> UFT<br>
+                            <b>Petpet:</b> none<br>
+                            <b>Special:</b> RW<br>
+                        </p>
+                    </div>
+                    <div class="petother">
+                        <img src="http://pets.neopets.com/cpn/Fomeau/1/2.png">
+                        <h3><a href="/petlookup.phtml?=Fomeau">Fomeau</a></h3>
+                        <h4>the Sroom Chia</h4>
+                        <p>
+                            <b>Status:</b> UFT<br>
+                            <b>Petpet:</b> none<br>
+                            <b>Special:</b> Lab Rat, MS FOMO<br>
+                        </p>
+                    </div>
+                    <div class="petother">
+                        <img src="http://pets.neopets.com/cpn/turquoisio/1/2.png">
+                        <h3><a href="/petlookup.phtml?=turquoisio">turquoisio</a></h3>
+                        <h4>the Pirate Draik</h4>
+                        <p>
+                            <b>Status:</b> UFT<br>
+                            <b>Petpet:</b> Pirate Charnie<br>
+                            <b>Special:</b> Beginner BD stats<br>
+                        </p>
+                    </div>
+                    <br><br>
+                </div>
+
+                <br><br><br><br>
+                
+                <div id="rehomed" class="petdisplay">
+                    <h4>All the pets I have owned for longer than a month since 2014</h4>
+                    <a href="/petlookup.phtml?=Shonders" class="oldie"><img src="http://pets.neopets.com/cpn/Shonders/1/4.png"><br>Shonders<br>adopted</a>
+                    <a href="/petlookup.phtml?=TwilightShadowss" class="oldie"><img src="http://pets.neopets.com/cpn/TwilightShadowss/1/4.png"><br>TwilightShadowss<br>adopted</a>
+                    <a href="/petlookup.phtml?=GodOfStories" class="oldie"><img src="http://pets.neopets.com/cpn/GodOfStories/1/4.png"><br>GodOfStories<br>adopted</a>
+                    <a href="/petlookup.phtml?=Kanyala" class="oldie"><img src="http://pets.neopets.com/cpn/Kanyala/1/4.png"><br>Kanyala<br>adopted</a>
+                    <a href="/petlookup.phtml?=blausee" class="oldie"><img src="http://pets.neopets.com/cpn/blausee/1/4.png"><br>blausee<br>adopted</a>
+                    <a href="/petlookup.phtml?=Destinaey" class="oldie"><img src="http://pets.neopets.com/cpn/Destinaey/1/4.png"><br>Destinaey<br>adopted</a>
+                    <a href="/petlookup.phtml?=Eiruthrax" class="oldie"><img src="http://pets.neopets.com/cpn/Eiruthrax/1/4.png"><br>Eiruthrax<br>traded</a>
+                    <a href="/petlookup.phtml?=Jamie_97456" class="oldie"><img src="http://pets.neopets.com/cpn/Jamie_97456/1/4.png"><br>Jamie_97456<br>adopted</a>
+                    <a href="/petlookup.phtml?=CindyLuHou229" class="oldie"><img src="http://pets.neopets.com/cpn/CindyLuHou229/1/4.png"><br>CindyLuHou229<br>pounded</a>
+                    <a href="/petlookup.phtml?=StawberryPeach" class="oldie"><img src="http://pets.neopets.com/cpn/StawberryPeach/1/4.png"><br>StawberryPeach<br>adopted</a>
+                    <a href="/petlookup.phtml?=Wingelle" class="oldie"><img src="http://pets.neopets.com/cpn/Wingelle/1/4.png"><br>Wingelle<br>pounded</a>
+                    <a href="/petlookup.phtml?=Goldessa" class="oldie"><img src="http://pets.neopets.com/cpn/Goldessa/1/4.png"><br>Goldessa<br>traded</a>
+                    <a href="/petlookup.phtml?=Storm_Reject" class="oldie"><img src="http://pets.neopets.com/cpn/Storm_Reject/1/4.png"><br>Storm_Reject<br>adopted</a>
+                    <a href="/petlookup.phtml?=RockyRayd" class="oldie"><img src="http://pets.neopets.com/cpn/RockyRayd/1/4.png"><br>RockyRayd<br>pounded</a>
+                    <a href="/petlookup.phtml?=Toad_Stewl" class="oldie"><img src="http://pets.neopets.com/cpn/Toad_Stewl/1/4.png"><br>Toad_Stewl<br>adopted</a>
+                    <a href="/petlookup.phtml?=JelloMellaphone" class="oldie"><img src="http://pets.neopets.com/cpn/JelloMellaphone/1/4.png"><br>JelloMellaphone<br>pounded</a>
+                    <a href="/petlookup.phtml?=BitsyBaby9" class="oldie"><img src="http://pets.neopets.com/cpn/BitsyBaby9/1/4.png"><br>BitsyBaby9<br>adopted</a>
+                    <a href="/petlookup.phtml?=xxJippyx" class="oldie"><img src="http://pets.neopets.com/cpn/xxJippyx/1/4.png"><br>xxJippyx<br>adopted</a>
+                </div>
+
+                <br><br><br><br>
+            </div>
+        </div><br><br>
+        
+        <div class="btn" style="padding-top: 20px;">
+            <a href="#page1" class="page" style="border-radius: 50px;">︽ About</a>
+            <a href="#page3" class="page" style="border-radius: 50px;">Wishes ︾</a>
+        </div>
+        
+    </div>
+    
+</div>
